@@ -9,7 +9,7 @@ export function LandingPage() {
     <div className="w-full h-screen bg-black">
       <div className="w-full h-screen fixed z-0">
         <FadeContent blur={true} delay={3000} duration={1000} easing="ease-out" initialOpacity={0}>
-          <div className="w-full h-screen">
+          <div className="w-full h-screen overflow-hidden">
             <Silk speed={2.3} scale={1.1} color="#463582" noiseIntensity={4} rotation={0} />
           </div>
         </FadeContent>
@@ -26,6 +26,7 @@ export function LandingPage() {
         <FadeContent blur={true} delay={2000} duration={1000} easing="ease-out" initialOpacity={0}>
           <p className="text-gray-300 font-serif text-xl md:text-2xl">Artesanias y Manias</p>
         </FadeContent>
+        <div className="h-30 md:h-0"></div>
       </div>
       <div className="w-full flex items-center justify-center mt-30 fixed bottom-5 z-200">
         <FadeContent blur={true} delay={4000} duration={1000} easing="ease-out" initialOpacity={0}>
