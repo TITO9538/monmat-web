@@ -41,13 +41,36 @@ export function NavBar() {
                         <img src="" alt="" />
                       </div> */}
                       <p className="text-xl font-bold mt-2">Perfil</p>
-                      <button className="text-md px-3 py-1 bg-black/10 border border-black/20 rounded mt-3">
-                        Ver Perfil
-                      </button>
+                      <div className="flex gap-3">
+                        <button className="text-md px-3 py-1 bg-black/10 border border-black/20 rounded mt-3">
+                          Ver Perfil
+                        </button>
+                        <button
+                          onClick={() => {
+                            navigate("/login");
+                          }}
+                          className="text-md px-3 py-1 bg-black/20 border border-black/20 rounded mt-3">
+                          Log In
+                        </button>
+                      </div>
                     </div>
                     <div className="w-full">
-                      <p className="py-3 px-5 bg-[#5f8482]">Home</p>
-                      <p className="py-3 px-5 bg-[#577a78]">Favorites</p>
+                      <p
+                        onClick={() => {
+                          navigate("/home");
+                          toggleMenu();
+                        }}
+                        className="py-3 px-5 bg-[#5f8482]">
+                        Home
+                      </p>
+                      <p
+                        onClick={() => {
+                          navigate("/favorites");
+                          toggleMenu();
+                        }}
+                        className="py-3 px-5 bg-[#577a78]">
+                        Favorites
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -57,16 +80,24 @@ export function NavBar() {
           {/* Links */}
           <div className="hidden fixed top-0 left-0 w-full h-20 md:flex items-center justify-center">
             <ul className="flex gap-8 text-2xl font-serif mt-2">
-              <Link to="/home" className="hover:scale-110 hover:drop-shadow-[0_8px_5px_rgba(0,0,0,0.3)] transition-all duration-300">
+              <Link
+                to="/home"
+                className="hover:scale-110 hover:drop-shadow-[0_8px_5px_rgba(0,0,0,0.3)] transition-all duration-300">
                 Home
               </Link>
-              <Link to="/favorites" className="hover:scale-110 hover:drop-shadow-[0_8px_5px_rgba(0,0,0,0.3)] transition-all duration-300">
+              <Link
+                to="/favorites"
+                className="hover:scale-110 hover:drop-shadow-[0_8px_5px_rgba(0,0,0,0.3)] transition-all duration-300">
                 Favoritos
               </Link>
             </ul>
           </div>
           {/* Perfil */}
-          <div onClick={() => {navigate("/login");}} className="hidden md:flex flex-col items-center justify-center h-full pt-2 hover:scale-115 group transition-transform duration-300 cursor-pointer z-10">
+          <div
+            onClick={() => {
+              navigate("/login");
+            }}
+            className="hidden md:flex flex-col items-center justify-center h-full pt-2 hover:scale-115 group transition-transform duration-300 cursor-pointer z-10">
             <FaFaceLaughBeam className="text-4xl mt-1 group-hover:hidden" />
             <FaFaceLaughSquint className="hidden text-4xl mt-1 group-hover:flex" />
             <p className="bg-[#F6E8CD] text-[#77A5A2] px-2 pb-1 mt-1 rounded-t-xl">Log In</p>
